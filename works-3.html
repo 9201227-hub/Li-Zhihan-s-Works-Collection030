@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>李芷涵 作品集</title>
+        
+        <style>
+            #backToTop {
+                position: fixed;
+                right: 24px;
+                bottom: 24px;  
+                width: 48px;  
+                height: 48px; 
+                border-radius: 50%; 
+                border: none; 
+                background: rgba(246, 14, 149, 0.7);  
+                color: #fff;  
+                font-size: 20px;
+                cursor: pointer;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+                z-index: 1000;
+            }
+
+            #backToTop.show {  
+                opacity: 1;
+                pointer-events: auto;
+            }
+            #backToTop:hover {
+                background: rgba(0, 0, 0, 0.9);
+            }
+            html, body {  
+                margin: 0;  
+                padding: 0;
+            }
+            body{
+                background-color: #0b0209;
+            }
+            .containter{
+                flex-wrap: wrap;
+                max-width: 1800px;
+                margin: 0 auto;
+                }
+            .標題{
+                color: #ffdbfb;
+               text-align: center;
+               background-color: rgb(35, 28, 35);
+               background-image: url("背景.jpg");
+               padding: 40px 0; 
+               margin-bottom: 25px;
+            }
+            nav{
+                text-align: center;
+            }
+            nav a {
+                margin: 0 16px;
+                text-decoration: none;
+                color: #ffdbfb;
+                font-size: 15px;
+            }
+            h3{
+                font-size: 25px;
+                text-align: center;
+                color: #ffcbf8;
+            }
+            p{
+                font-size: 15px;
+                text-align: center;
+                color: #ffcbf8;
+            }
+             .card-container{
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                flex-wrap: wrap;
+                margin-bottom: 40px;
+            }
+            .a{
+                margin-top: 24px;
+            }
+            .card{
+                
+                width: 60%;
+                height: 600px;
+                background-color: rgb(177, 133, 169);
+                margin: 24px auto;
+                border-radius:12px;
+                overflow:hidden;
+                box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+            }
+            .hero {
+                width: 100%;
+                height: 600px;                /* 👈 你想要多高就改這裡 */
+                background-image: url("image\ \(29\).webp");
+                background-size: cover;       /* 不變形鋪滿 */
+                background-position: center;  /* 永遠置中 */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 32px;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+            .hero-link {
+                display: block;        /* 讓 a 包住整塊 */
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            .hero-link:hover .hero {
+                transform: scale(1.03);
+                filter: brightness(1.1);
+            }
+            .work {
+                max-width: 720px;     /* 整個作品區最大寬度 */
+                width: 90%;
+                margin: 40px auto;
+                text-align: center;
+            }
+            .work img {
+                width: 100%;          /* 跟容器走 */
+                height: auto;         /* ⭐ 保持比例 */
+                object-fit: contain; /* 雙保險，不裁圖 */
+                display: block;
+            }
+            .work figcaption {
+                background-color: #653e54;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 12px;
+                font-size: 14px;
+                line-height: 1.6;
+                color: #ccc;
+            }
+            img{
+                border-radius: 10px;
+            }
+            .layout { 
+                display: flex; 
+                height: 100vh;
+            }
+            .sidebar {
+                width: 220px;
+                background: #0a020e;
+                color: #ffdbfb;
+                padding: 20px;
+                position: sticky;
+                top: 0;
+                height: 100vh;
+            }
+            .sidebar a {
+                display: block;
+                margin: 12px 0;
+                color: #ffdbfb;
+                text-decoration: none;
+            }
+            .sidebar a:hover {
+                color: #ff8fe5;
+            }
+            .content {
+                flex: 1;
+                padding: 40px;
+                /* overflow-y: auto; */
+            }
+            section {
+                margin-bottom: 120px;
+            }
+            section img {
+                max-width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+            section {
+                scroll-margin-top: 20px;
+            }
+            @media (max-width: 400px) {
+                #backToTop {
+                    right: 16px;                
+                    bottom: 16px;                
+                    width: 44px;
+                    height: 44px;           
+                }
+            }
+            
+            @media screen and (max-width: 800px){
+                .layout {
+                    flex-direction: column;
+                }
+
+                .sidebar {
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                 }
+            }
+        </style>
+    </head>
+    <body>
+       <div class="containter">
+            <header class="標題">-Thirty</header>
+        <nav>
+            <a href="index.html">首頁</a>
+             <a href="works.html">作品集</a>
+            <a href="about.html">關於我</a>
+        </nav>
+        <button id="backToTop">↑</button>
+        <script>
+          const btn = document.getElementById('backToTop');
+          window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+          btn.classList.add('show');
+          } else {
+          btn.classList.remove('show');
+          }
+          });
+          btn.addEventListener('click', () => {
+          window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+          });
+          });
+        </script>
+        <div class="layout">
+            <!-- 左側選單 -->
+            <aside class="sidebar">
+                <h3 style="font-size: 20px; color: #a97f9d;">區域分類</h3>
+                <a href="works-2.html" style="text-align: center; font-size: 15px;">上一區</a>
+                <a href="works.html" style="text-align: center; font-size: 15px;">回分區頁</a>
+            </aside>
+        <br>
+        <br>
+        <br>
+        <!-- 右側內容 -->
+        <main class="content">
+            <h3 style="font-size: 35px; color: #fde4ff;"> 攝影區</h3> 
+            <br>
+            <br>
+            <br>
+
+            <h3> 觀察 | 享受 | 紀錄</h3>        
+            <figure class="work">        
+                <img src="01 (6).jpg" alt="01">        
+                <figcaption>        
+                    ✧✧✧| 其實天空和海洋都是藍色 |✧✧✧        
+                </figcaption>        
+            </figure>
+        <br>
+            <figure class="work">        
+                <img src="01 (7).jpg" alt="02">        
+                <figcaption>        
+                    ✧✧✧| 他一直都在，只是你的角度錯誤而已 |✧✧✧        
+                </figcaption>        
+            </figure>
+        <br>
+            <figure class="work">        
+                <img src="01 (8).jpg" alt="03">        
+                <figcaption>        
+                    ✧✧✧| 重複的終點 |✧✧✧        
+                </figcaption>        
+            </figure>
+        <br>
+             <figure class="work">        
+                <img src="01 (11).jpg" alt="03">        
+                <figcaption>        
+                    ✧✧✧| 「好像桌曆。」 |✧✧✧        
+                </figcaption>        
+            </figure>
+        <br>
+            <figure class="work">        
+                <img src="01 (13).jpg" alt="03">        
+                <figcaption>        
+                    ✧✧✧| 是之前的現在進行式 |✧✧✧        
+                </figcaption>        
+            </figure>
+        <br>
+            <figure class="work">        
+                <img src="01 (15).jpg" alt="03">        
+                <figcaption>        
+                    ✧✧✧| 他們只是想裝飾天空 |✧✧✧        
+                </figcaption>        
+            </figure>
+        <br>
+            
+        </main>
+
+        </div>
+    </body>
+</html>

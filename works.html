@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>李芷涵 作品集</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: #0b0209;
+            }
+            .containter{
+                flex-wrap: wrap;
+                max-width: 1800px;
+                margin: 0 auto;
+                }
+            .標題{
+                color: #ffdbfb;
+               text-align: center;
+               background-color: rgb(35, 28, 35);
+               background-image: url("背景.jpg");
+               padding: 40px 0; 
+               margin-bottom: 25px;
+            }
+            nav{
+                text-align: center;
+            }
+            nav a {
+                margin: 0 16px;
+                text-decoration: none;
+                color: #ffdbfb;
+                font-size: 15px;
+            }
+            h3{
+                font-size: 30px;
+                text-align: center;
+                color: #ffcdf8;
+            }
+            p{
+                font-size: 15px;
+                text-align: center;
+                color: #d47bc9;
+            }
+             .card-container{
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                flex-wrap: wrap;
+                margin-bottom: 40px;
+            }
+            
+            .card{
+                
+                width: 60%;
+                height: 600px;
+                /* background-color: rgb(177, 133, 169); */
+                margin: 24px auto;
+                border-radius:12px;
+                overflow:hidden;
+                box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+            }
+            .hero {
+                position: relative;
+                width: 100%;
+                height: 600px;                /* 👈 你想要多高就改這裡 */
+                /* background-image: url("image\ \(29\).webp"); */
+                background-size: cover;       /* 不變形鋪滿 */
+                background-position: center;  /* 永遠置中 */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 32px;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+            .a{
+                flex: 0 0 100%;
+                 background-image: url("46-47.jpg");
+            }
+            .b{
+                 background-image: url("拔刀\ \(1\).jpg")
+            }
+            .c{
+                background-image: url("01\ \(13\).jpg")
+            }
+            .hero-link {
+                display: block;        /* 讓 a 包住整塊 */
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+            }
+            .overlay {
+                position: absolute;
+                inset: 0; /* 上下左右 0 */
+                background-color: rgba(0, 0, 0, 0.7); /* 70% 透明 */
+                z-index: 1;
+            }
+            .hero-text {
+                position: relative;
+                z-index: 2; /* 壓在 overlay 上面 */
+                color: #fff;
+                text-align: center;
+            }
+            .hero-link:hover .hero {
+                transform: scale(1.03);
+                filter: brightness(1.1);
+            }
+            @media screen and (max-width: 400px){
+                .card {
+                    width: 90%;      /* 卡片變窄 */
+                }
+                .hero {
+                    height: 300px;   /* Hero 高度縮小 */
+                }
+                h3 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+            
+            @media screen and (max-width: 800px) {
+                .card {
+                    width: 80%;
+                }
+                .hero {
+                    height: 400px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+       <div class="containter">
+            <header class="標題">-Thirty</header>
+        <nav>
+            <a href="index.html">首頁</a>
+             <a href="works.html">作品集</a>
+            <a href="about.html">關於我</a>
+        </nav>
+        <div class="card">
+            <a href="works-1.html" class="hero-link">
+                <section class="hero a">
+                    <div class="overlay"></div>
+                    <div class="hero-text">
+                        <h3>繪圖區</h3>
+                        <p>電繪 / 立繪 / 設計</p>
+                    </div>
+                </section>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="works-2.html" class="hero-link">
+                <section class="hero b">
+                    <div class="overlay"></div>
+                    <div class="hero-text">
+                        <h3>動態區</h3>
+                        <p>短片 / Live 2b </p>
+                    </div>
+                </section>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="works-3.html" class="hero-link">
+                <section class="hero c">
+                    <div class="overlay"></div>
+                    <div class="hero-text">
+                        <h3>攝影區</h3>
+                        <p>紀錄，代表我有一雙能發現【 美 】的雙眼</p>
+                    </div>
+                </section>
+            </a>
+        </div>
+
+        </div>
+    </body>
+</html>
